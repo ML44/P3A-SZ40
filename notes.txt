@@ -1,0 +1,61 @@
+Notes sur SZ40
+
+Code de Baudot : une implementation https://github.com/TonyWhite/Baudot
+Dans un premier temps, implementation simple (seulement la partie alphabetique, pas aussi les caractères spéciaux)
+Le changement sera assez simple à faire (un booleen qui conserve si on est en alphabétique ou numérique)
+
+SZ40
+http://practicalcryptography.com/ciphers/lorenz-cipher/
+http://www.usna.edu/Users/math/wdj/_files/documents/papers/cryptoday/tutte_fish.pdf
+http://www.quadibloc.com/crypto/te0301.htm
+
+Une implémentation en ADA avec la démarche de déchiffrement (lettre par lettre !!!)
+http://www.schlaupelz.de/SZ42/SZ42_software.html
+
+Les challenges du National Museum of Computing (utilisés par le précédent)
+http://web.archive.org/web/20071118132607/http://www.tnmoc.org/cipherp.htm
+
+General report on Tunny :
+http://www.alanturing.net/turing_archive/archive/index/tunnyreportindex.html
+http://www.ellsbury.com/tunny/tunny-007.htm
+
+
+Rotors :
+bk1 ...xxxx....xx....x.xx..x..xx.x.xx.x.xxxx.
+
+bk2 xx..xxx.xx...x.x.xx...x....xxx.
+
+bk3 ..xxx.xx..x....xxx..xx.xx..xx
+
+bk4 ..xx..x.xx..x..xx..x..xxxx
+
+bk5 .x...x.xx..x...xxx.xxx.
+
+bm1 xxx.x.xx..xx..xx...xxxx.x.xx.xx...xx....xxxx.xx..xx...xx....x
+
+bm2 x.xxx.x.x.x.x..x.x.xxx.x.x.x.x.x.x.x.
+
+bs1 ..x.x.x.x.x..x..x.xx.xx.x.x..xx.xxx..xxx...
+
+bs2 ..x.xx.x.x.x.x.x.xx..xx.x..x.xxxx.....xxx..x.xx
+
+bs3 x.x.x.x.x.x.x..x..xx.x.x.xxxx....xxx...xxx.xx..x..x
+
+bs4 x.x..xx.x.x.x.x.x.xx.x....xx..xx..xx.xxxxx.x..x....x.
+
+bs5 .x.x.x.x.xx...x.x..xxx.xxxx.xx.x....x...x..xx.xx..xx..x.x.x
+
+
+Les Chis bougent à chaque fois
+Les Psis bougent si TM = True
+Le Mu1 bouge à chaque fois
+Le Mu2 bouge si la valeur de Mu1 (avant incrementation) est True
+BM (Basic Motor) est la valeur de Mu2 (avant incrementation éventuelle)
+TM (Total Motor) = BM || not(L)
+L (Limitation) est définie différement ...
+- Soit toujours vrai (ie TM = BM)
+- Soit = Chi2_old (position précédente de Chi2)
+- Soit = Chi2_old ^ Psi1_old
+- Soit = Chi2_old ^ P5_old_old (the 5th caracter of the plain text two positions ago)
+- Soit = Chi2_old ^ Psi1_old ^ P5_old_old ...
+On utilisera Chi2_old dans un premier temps.
