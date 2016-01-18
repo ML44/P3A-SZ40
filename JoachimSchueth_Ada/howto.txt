@@ -1,0 +1,9 @@
+Pour compiler :
+gnatmake cryptrace.adb
+
+Données :
+Clés dans data/key.txt
+Chiffré dans data/file.txt
+
+Pour lancer :
+./cryptrace data/key.txt data/file.txt

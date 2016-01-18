@@ -1,0 +1,13 @@
+Pour compiler :
+make lorentz
+ou
+gcc lorentz.c -o lorentz
+
+Données :
+Clés dans document
+Chiffré dans "message"
+
+ATTENTION : problème dans le Baudot !
+
+Pour lancer :
+./lorentz
