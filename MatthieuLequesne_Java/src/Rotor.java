@@ -8,7 +8,7 @@ public class Rotor {
 	{
 		length = v.length;
 		value = v;
-		position = p % length;
+		position = (p-1) % length;
 	}
 
 	Rotor(int p, String s)
@@ -16,7 +16,7 @@ public class Rotor {
 		boolean[] v = convert(s);
 		length = v.length;
 		value = v;
-		position = p % length;
+		position = (p-1) % length;
 	}
 
 	boolean[] convert(String s)
@@ -41,7 +41,7 @@ public class Rotor {
 	}
 	
 	public int getPosition(){
-		return position;
+		return position+1;
 	}
 	
 	public void increment(){

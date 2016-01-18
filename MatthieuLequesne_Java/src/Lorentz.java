@@ -2,8 +2,8 @@
 public class Lorentz {
 	
 	Rotor chi1, chi2, chi3, chi4, chi5, mu1, mu2, psi1, psi2, psi3, psi4, psi5;
-	boolean BM;
-	boolean old_chi2 = true;
+	boolean M1, M2;
+	boolean old_chi2 = false;
 	boolean L;
 	boolean TM;
 	int step = 0;
@@ -16,7 +16,7 @@ public class Lorentz {
 		chi4 = new Rotor(c4,"..xx..x.xx..x..xx..x..xxxx");
 		chi5 = new Rotor(c5,".x...x.xx..x...xxx.xxx.");
 		
-		mu1 = new Rotor(m1,"xxxx.x.xx..xx..xx...xxxx.x.xx.xx...xx....xxxx.xx..xx...xx....");
+		mu1 = new Rotor(m1,"xxx.x.xx..xx..xx...xxxx.x.xx.xx...xx....xxxx.xx..xx...xx....x");
 		mu2 = new Rotor(m2,"x.xxx.x.x.x.x..x.x.xxx.x.x.x.x.x.x.x.");
 		
 		psi1 = new Rotor(p1,"..x.x.x.x.x..x..x.xx.xx.x.x..xx.xxx..xxx...");
@@ -50,10 +50,15 @@ public class Lorentz {
 		Baudot chi = this.chi();
 		Baudot psi = this.psi();
 		Baudot chiffre = b.add(chi.add(psi));
-		BM = mu2.getValue();
+		M1 = mu1.getValue();
+		M2 = mu2.getValue();
 		L = old_chi2 ; // Definition may change
 		old_chi2 = chi2.getValue(); 
-		TM = (BM||(!L)); 
+		TM = (M2||(!L)); 
+		step+=1;
+		this.printState(b, chiffre, chi, psi);
+
+		// incrementation
 		chi1.increment();
 		chi2.increment();
 		chi3.increment();
@@ -72,9 +77,6 @@ public class Lorentz {
 			psi4.increment();
 			psi5.increment();
 		}
-		// ajouter les MAJ de M2 et TM
-		step+=1;
-		this.printState(b, chiffre, chi, psi);
 		return chiffre;
 	}
 	
@@ -102,7 +104,8 @@ public class Lorentz {
 				psi5.getPosition() + "\t" +
 				c.getStringX() + "\t" +
 				p.getStringX() + "\t" +
-				this.printBool(BM) + "\t" +
+				this.printBool(M1) + "\t" +
+				this.printBool(M2) + "\t" +
 				this.printBool(TM)
 				);
 	}
