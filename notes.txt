@@ -68,3 +68,14 @@ A participé à la fondation du musée à Bletchley
 www.codesandciphers.co.uk
 Site génial avec pleins de ressources
 vidéos, photos, textes, ...
+
+
+TODO :
+- Revoir le code : 
+	- regrouper les rotors,
+	- séparer incrementation et chiffrage,
+	- coder en dur les rotors,
+	- mieux gérer les entrees sorties
+	- commenter !
+- Baudot avec 2 niveaux
+- Pouvoir encoder un texte
