@@ -51,7 +51,7 @@ begin
 
     SZ42.Apply_Crypto(Machine, Data_In(1..Len), Data_Out(1..Len), Trace);
     Put_Line(" Step   Input    Output   K1 K2 K3 K4 K5  M1 M2  S1 S2 S3 S4 S5"
-           & "  Chi   Psi   TM");
+           & "  Chi   Psi    M1  M2  TM");
     for I in 1..Len loop
         Put(I, 5); Put(":  ");
         Print_Sym(Data_In(I)); Put(' ');
@@ -70,6 +70,18 @@ begin
         Put(' ');
         Put_Symbol_Bits(Trace(I).Psi_Sym);
         Put("  ");
+        if (Trace(I).M1) then
+            Put('x');
+        else
+            Put('.');
+        end if;    
+        Put("   ");
+        if (Trace(I).M2) then
+            Put('x');
+        else
+            Put('.');
+        end if;    
+        Put("   ");
         if Trace(I).TM then
             Put('x');
         else

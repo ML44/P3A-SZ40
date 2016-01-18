@@ -24,7 +24,7 @@ package SZ42 is
     type Machine_State is record
         Pos: Wheel_Positions;
         Chi_Sym, Psi_Sym: Symbol_T;
-        BM, TM: Boolean;
+        BM, TM, M1, M2: Boolean;
     end record;
     type Machine_Trace is array(Positive range <>) of Machine_State;
     type Machine_Trace_Access is access Machine_Trace;
@@ -60,5 +60,8 @@ private
         Lim: Limitation_T;
         Chi2_Back: Symbol_T;
         TM: Boolean;
+		BM: Boolean;
+		M1: Boolean;
+		M2: Boolean;
     end record;    
 end SZ42;

@@ -27,7 +27,7 @@ W system.img_enum_new%s	s-imenne.adb		s-imenne.ali
 W system.val_enum%s	s-valenu.adb		s-valenu.ali
 W sz42%s		sz42.adb		sz42.ali
 
-U sz42.text_io%s	sz42-text_io.ads	f77d27b8 EE NE OO PK IU
+U sz42.text_io%s	sz42-text_io.ads	7a0abb78 EE NE OO PK IU
 W ada.tags%s		a-tags.adb		a-tags.ali
 W sz42%s		sz42.adb		sz42.ali
 
@@ -60,7 +60,7 @@ D s-traent.ads		20150506105327 005bf670 system.traceback_entries%s
 D s-unstyp.ads		20150506105330 9d58a4c0 system.unsigned_types%s
 D s-valenu.ads		20150506105331 bb1a4295 system.val_enum%s
 D s-wchcon.ads		20150506105330 1b7d22d2 system.wch_con%s
-D sz42.ads		20071115194715 c5a491a4 sz42%s
+D sz42.ads		20160118033158 48d30d64 sz42%s
 D sz42-text_io.ads	20071115194715 32d9b61c sz42.text_io%s
 D sz42-text_io.adb	20071115194715 40eadbf3 sz42.text_io%b
 X 1 ada.ads
@@ -94,7 +94,7 @@ X 11 a-tiinio.ads
 51U14*Get 32|112s13[5|18]
 66U14*Put 32|90s17[5|18] 135s13[5|18]
 X 30 sz42.ads
-6K9*SZ42 64e9 31|6r9 43r5 32|13r14 153r5
+6K9*SZ42 67e9 31|6r9 43r5 32|13r14 153r5
 7M10*Bit
 8M10*Symbol_T 31|10r35 15r30 16r30 17r30 18r30 19r30 20r30 32|16r34 148r20
 9A10*Symbol_String(8M10)<integer> 31|24r19 29r18 32|18r57 43r57

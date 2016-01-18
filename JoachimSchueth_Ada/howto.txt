@@ -6,4 +6,4 @@ Clés dans data/key.txt
 Chiffré dans data/file.txt
 
 Pour lancer :
-./cryptrace data/key.txt data/file.txt
+./cryptrace data/key2.txt data/file2.txt > data/sortie2.txt

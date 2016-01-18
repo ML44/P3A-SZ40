@@ -112,6 +112,7 @@ package body SZ42 is
                 end loop;    
             end if;
             M.TM := Total_Motor(M);
+			M.BM := Total_Motor(M);
         end if;
     end Machine_Step;
 
@@ -158,6 +159,8 @@ package body SZ42 is
                 Trace(I).Chi_Sym := Get_Chi_Symbol(M);
                 Trace(I).Psi_Sym := Get_Psi_Symbol(M);
                 Trace(I).TM := M.TM;
+				Trace(I).M1 := (Wheel_Value(M, Mu61)=1) ;
+				Trace(I).M2 := (Wheel_Value(M, Mu37)=1) ;
             end if;
             if Mot_Trace /= null then
                 Mot_Trace(I) := M.TM;
