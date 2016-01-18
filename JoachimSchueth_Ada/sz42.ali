@@ -1,0 +1,167 @@
+V "GNAT Lib v2015"
+P ZX
+
+RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_ENUMERATION_MAPS
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTION_PROPAGATION
+RV NO_EXCEPTIONS
+RV NO_IO
+RV NO_STANDARD_STORAGE_POOLS
+RV SPARK_05
+
+U sz42%b		sz42.adb		bc6bda42 NE OO PK IU
+W ada%s			ada.ads			ada.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W interfaces%s		interfac.ads		interfac.ali
+W system%s		system.ads		system.ali
+W system.concat_4%s	s-conca4.adb		s-conca4.ali
+W system.img_enum_new%s	s-imenne.adb		s-imenne.ali
+W system.img_int%s	s-imgint.adb		s-imgint.ali
+
+U sz42%s		sz42.ads		c5a491a4 EE NE OO PK IU
+W ada.tags%s		a-tags.adb		a-tags.ali
+
+D ada.ads		20150506105328 3ffc8e18 ada%s
+D a-except.ads		20150506105328 5250cb69 ada.exceptions%s
+D a-ioexce.ads		20150506105327 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20150506105329 119b8fb3 ada.streams%s
+D a-tags.ads		20150506105332 dc4d0634 ada.tags%s
+D a-textio.ads		20150506105332 386df5d4 ada.text_io%s
+D a-unccon.ads		20150506105331 f9eb8f06 ada.unchecked_conversion%s
+D interfac.ads		20150506105327 6033a23f interfaces%s
+D i-cstrea.ads		20150506105327 e53d8b8e interfaces.c_streams%s
+D system.ads		20150506105331 100301f7 system%s
+D s-conca4.ads		20150506105331 7e642b20 system.concat_4%s
+D s-crtl.ads		20150506105326 0ebbdb71 system.crtl%s
+D s-exctab.ads		20150506105331 54135002 system.exception_table%s
+D s-ficobl.ads		20150506105333 078245e4 system.file_control_block%s
+D s-imenne.ads		20150506105328 614c06c0 system.img_enum_new%s
+D s-imgint.ads		20150506105328 02dbe0c2 system.img_int%s
+D s-parame.ads		20150506105331 7e2a0d7f system.parameters%s
+D s-soflin.ads		20150506105328 aa763b52 system.soft_links%s
+D s-stache.ads		20150506105332 a37c21ec system.stack_checking%s
+D s-stalib.ads		20150506105331 fa0a3617 system.standard_library%s
+D s-stoele.ads		20150506105332 2dc34a04 system.storage_elements%s
+D s-traent.ads		20150506105327 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20150506105330 9d58a4c0 system.unsigned_types%s
+D s-wchcon.ads		20150506105330 1b7d22d2 system.wch_con%s
+D sz42.ads		20071115194715 c5a491a4 sz42%s
+D sz42.adb		20071115194715 41a2be32 sz42%b
+X 1 ada.ads
+16K9*Ada 19e8 26|6r6 7r6
+X 6 a-textio.ads
+49K13*Text_IO 471e16 26|6w10 7r10
+166U14*New_Line 26|92s9
+242U14*Put 26|90s9
+X 25 sz42.ads
+6K9*SZ42 55E10 64l5 64e9 26|9b14 180l5 180t9
+7M10*Bit 22r57
+8M10*Symbol_T 9r55 17r46 26r27 55r56 61r20 26|11r59 118r48 119r12 127r48
+. 128r12 136r48 137r12
+9A10*Symbol_String(8M10)<integer> 45r19 50r15 51r16 26|149r15 150r16 172r19
+11I10*Bit_Num<short_short_integer> 14r48 22r45 23r49 55r44 26|30r12 33r16
+. 84r31 91r15
+12E10*Wheel_Num 13e50 14r34 17r32 22r34 23r35 55r33 26|11r41 60r17 65r23
+. 69r18 81r51 90r31
+12n24*Chi1{12E10} 26|101r18 121r18
+12n30*Chi2{12E10} 26|32r26 34r31 38r34 100r39
+12n36*Chi3{12E10}
+12n42*Chi4{12E10}
+12n48*Chi5{12E10} 26|67r23 101r24 121r24
+13n9*Mu61{12E10} 26|105r31 108r30
+13n15*Mu37{12E10} 26|18r48 106r34
+13n21*Psi1{12E10} 26|110r26 130r18
+13n27*Psi2{12E10}
+13n33*Psi3{12E10}
+13n39*Psi4{12E10}
+13n45*Psi5{12E10} 26|110r32 130r24
+14a5*Wheel_Period(11I10) 26|34r18 70r25 83r29
+17a5*Wheel_Mask(8M10) 26|73r50
+19E10*Limitation_T 19e46 38r14 60r14 26|57r17
+19n27*Lim_None{19E10} 26|22r18
+19n37*Lim_Chi2{19E10} 26|23r18
+21R10*Machine 35r16 40r39 41r31 44r19 49r19 56c10 63e15 26|11r29 17r29 29r42
+. 41r39 48r31 54r16 81r39 97r38 118r32 127r32 136r32 148r19 171r19
+22A10*Wheel_Patterns(7M10)<12E10><11I10> 36r17 26|55r17
+23A10*Wheel_Positions(11I10)<12E10> 25r14 37r17 40r53 58r37 26|41r53 56r17
+24R10*Machine_State 28e15 29r55
+25a9*Pos{23A10} 26|157m26
+26m9*Chi_Sym{8M10} 26|158m26
+26m18*Psi_Sym{8M10} 26|159m26
+27b9*BM{boolean}
+27b13*TM{boolean} 26|160m26
+29A10*Machine_Trace(24R10)<integer> 30r41
+30P10*Machine_Trace_Access(29A10) 46r16 52r16 26|151r16 173r16
+31A10*Motor_Trace(boolean)<integer> 32r39
+32P10*Motor_Trace_Access(31A10) 47r20 53r20 26|152r20 174r20
+34U15*Init_Machine 35<9 36>9 37>9 38>9 39>9 26|53b15 79t8
+35r9 M{21R10} 26|54b9 62m9 63m9 72m31 73m31 77m9 78m15
+36a9 Pat{22A10} 26|55b9 71r22
+37a9 Pos{23A10} 26|56b9 77r30
+38e9 Lim{19E10} 26|57b9 63r18
+39b9 Use_Psi{boolean} 26|58b9 62r22 64r12
+40U15*Set_Positions 40=29 40>48 26|41b15 46l9 46t22 50s9
+40r29 M{21R10} 26|41b29 43m9 44m26 45m9 45r29
+40a48 Pos{23A10} 26|41b48 43r24
+41U15*Reset 41=21 26|48b15 51l9 51t14 78s9
+41r21 M{21R10} 26|48b21 50m23 50r26
+43U15*Apply_Crypto 44=9 45=9 46>9 47>9 26|170b15 178t8
+44r9 M{21R10} 26|171b9 177m22
+45a9 X{9A10} 26|172b9 177r25 177m28
+46p9 Trace{30P10} 26|173b9 177r31
+47p9 Mot_Trace{32P10} 26|174b9 177r38
+48U15*Apply_Crypto 49=9 50>9 51<9 52>9 53>9 26|147b15 168t8 177s9
+49r9 M{21R10} 26|148b9 157r33 158r52 159r52 160r32 163r33 165r45 166m26
+50a9 X{9A10} 26|149b9 155r18 165r21
+51a9 Y{9A10} 26|150b9 165m13
+52p9 Trace{30P10} 26|151b9 156r16 157r17 158r17 159r17 160r17
+53p9 Mot_Trace{32P10} 26|152b9 162r16 163r17
+55A10 Wheel_Symbols(8M10)<12E10><11I10> 57r18
+57a9*Symbols{55A10} 26|13r18 38r26 72m33 73m33
+58a9*Positions{23A10} 26|13r31 32r16 43m11 83r14 84m15 86m15 86r33 91r31
+. 157r35
+58a20*Start_Positions{23A10} 26|50r28 77m11
+59b9*Use_Psi{boolean} 26|62m11 104r14 140r14
+60e9*Lim{19E10} 26|21r16 63m11
+61m9*Chi2_Back{8M10} 26|23r39 38m11 100m11
+62b9*TM{boolean} 26|45m11 98r35 114m15 160r34 163r35
+X 26 sz42.adb
+11V14 Wheel_Value{25|8M10} 11b14 11>26 11>38 14t8 15r19 18s33 100s24 105s16
+. 122s24 131s24
+11r26 M{25|21R10} 13r16 13r29
+11e38 W{25|12E10} 13r26 13r41
+17V14 Total_Motor{boolean} 17b14 17>26 26l9 26t20 27r19 45s17 114s21
+17r26 M{25|21R10} 18r45 21r14 23r37
+18b9 BM{boolean} 22r36 23r57
+19b9 TM{boolean} 22m30 23m30 25r16
+29U15 Adjust_Chi2_Back 29b15 29=32 39l9 39t25 44s9
+29r32 M{25|21R10} 32r14 38m9 38r24
+30i9 P{25|11I10} 32m9 33r12 34m13 36m13 36r18 38r40
+60e9 W_Last{25|12E10} 65m13 67m13 69r35
+69e13 W{25|12E10} 70r38 71r26 72r41 73r41 73r61
+70i17 L<short_short_integer> 71r29 72r44 73r44
+81U15 Advance_Wheel 81b15 81=29 81>48 94t8 95r19 102s13 106s17 108s13 111s21
+81r29 M{25|21R10} 83r12 84m13 86m13 86r31 91r29
+81e48 W{25|12E10} 83r24 83r42 84r25 86r25 86r43 90r47 91r41
+97U15 Machine_Step 97b15 97=28 116l9 116t21 166s13
+97r28 M{25|21R10} 98r33 100m9 100r36 102m27 104r12 105r28 106m31 108m27 111m35
+. 114m13 114r33
+98b9 TM{boolean} 109r16
+101e13 W{25|12E10} 102r30
+110e21 W{25|12E10} 111r38
+118V14 Get_Chi_Symbol{25|8M10} 118b14 118>29 125l9 125t23 139s14 145r19 158s37
+118r29 M{25|21R10} 122r36
+119m9 K{25|8M10} 122m13 122r18 124r16
+121e13 W{25|12E10} 122r39
+127V14 Get_Psi_Symbol{25|8M10} 127b14 127>29 134l9 134t23 141s24 145r35 159s37
+127r29 M{25|21R10} 131r36
+128m9 K{25|8M10} 131m13 131r18 133r16
+130e13 W{25|12E10} 131r39
+136V14 Get_Key_Symbol{25|8M10} 136b14 136>29 144t8 145r51 165s30
+136r29 M{25|21R10} 139r29 140r12 141r39
+137m9 K{25|8M10} 139m9 141m13 141r18 143r16
+155i13 I{integer} 157r23 158r23 159r23 160r23 163r27 165r15 165r23
+

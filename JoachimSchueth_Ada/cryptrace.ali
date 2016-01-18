@@ -1,0 +1,115 @@
+V "GNAT Lib v2015"
+M P W=b
+P SS ZX
+
+RN
+RV NO_ALLOCATORS
+RV NO_IO
+RV NO_LOCAL_ALLOCATORS
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_ALLOCATORS_AFTER_ELABORATION
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV SPARK_05
+
+U cryptrace%b		cryptrace.adb		6140018f NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.command_line%s	a-comlin.adb		a-comlin.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W sz42%s		sz42.adb		sz42.ali
+W sz42.text_io%s	sz42-text_io.adb	sz42-text_io.ali
+
+D ada.ads		20150506105328 3ffc8e18 ada%s
+D a-comlin.ads		20150506105330 ea62afbc ada.command_line%s
+D a-except.ads		20150506105328 5250cb69 ada.exceptions%s
+D a-inteio.ads		20150506105332 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20150506105327 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20150506105329 119b8fb3 ada.streams%s
+D a-tags.ads		20150506105332 dc4d0634 ada.tags%s
+D a-textio.ads		20150506105332 386df5d4 ada.text_io%s
+D a-tiinio.ads		20150506105328 aa04e5d6 ada.text_io.integer_io%s
+D a-unccon.ads		20150506105331 f9eb8f06 ada.unchecked_conversion%s
+D cryptrace.adb		20071115194714 b279f5fb cryptrace%b
+D interfac.ads		20150506105327 6033a23f interfaces%s
+D i-cstrea.ads		20150506105327 e53d8b8e interfaces.c_streams%s
+D system.ads		20150506105331 100301f7 system%s
+D s-crtl.ads		20150506105326 0ebbdb71 system.crtl%s
+D s-exctab.ads		20150506105331 54135002 system.exception_table%s
+D s-ficobl.ads		20150506105333 078245e4 system.file_control_block%s
+D s-parame.ads		20150506105331 7e2a0d7f system.parameters%s
+D s-secsta.ads		20150506105331 86a2856d system.secondary_stack%s
+D s-soflin.ads		20150506105328 aa763b52 system.soft_links%s
+D s-stache.ads		20150506105332 a37c21ec system.stack_checking%s
+D s-stalib.ads		20150506105331 fa0a3617 system.standard_library%s
+D s-stoele.ads		20150506105332 2dc34a04 system.storage_elements%s
+D s-traent.ads		20150506105327 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20150506105330 9d58a4c0 system.unsigned_types%s
+D s-wchcon.ads		20150506105330 1b7d22d2 system.wch_con%s
+D sz42.ads		20071115194715 c5a491a4 sz42%s
+D sz42-text_io.ads	20071115194715 32d9b61c sz42.text_io%s
+X 1 ada.ads
+16K9*Ada 19e8 11|6r6 7r6 8r6 9r6 10r6 11r6
+X 2 a-comlin.ads
+38K13*Command_Line 139e21 11|10w10 11r10
+48V13*Argument{string} 11|45s27 47s28
+X 4 a-inteio.ads
+18K13*Integer_Text_IO[9|46] 11|8w10 9r10
+X 8 a-textio.ads
+49K13*Text_IO 471e16 11|6w10 7r10
+166U14*New_Line 11|78s9
+208U14*Put 11|24s17 26s17 33s9 57s32 59s33 60s39 64s32 70s9 74s13 76s13
+242U14*Put 11|56s20 58s38 63s47 68s9 72s9
+263U14*Put_Line 11|53s5
+X 9 a-tiinio.ads
+66U14*Put 11|56s9[4|18] 66s13[4|18]
+X 11 cryptrace.adb
+15U11*CrypTrace 15b11 80l5 80t14
+17P10 Symbol_String_Access(27|9A10) 42r24
+20U15 Put_Symbol_Bits 20b15 20>31 29l9 29t24 58s9 60s9 69s9 71s9
+20m31 Sym{27|8M10} 23r17
+22i13 K{integer} 23r36
+31U15 Print_Sym 31b15 31>25 34l9 34t18 57s9 59s9
+31m25 Sym{27|8M10} 33r52
+36a5 Pat{27|22A10} 45m40 50r32
+37a5 Pos{27|23A10} 45m45 50r37
+38e5 Lim{27|19E10} 45m50 50r42
+40r5 Machine{27|21R10} 50m23 52m23 52r23
+41p5 Trace{27|30P10} 49m5 52r67 66r25 69r25 71r25 73r12
+42p5 Data_In{17P10} 46m5 47r41 52r32 57r19 58r25
+42p14 Data_Out{17P10} 48m5 52r49 59r19 60r25
+43i5 Len{natural} 47m54 48r43 49r40 52r43 52r61 55r17
+55i9 I{integer} 56r13 57r27 58r33 59r28 60r34 66r31 69r31 71r31 73r18
+61e13 W{27|12E10} 62r18 66r38
+X 27 sz42.ads
+6K9*SZ42 11|12w6 13r6 17r41 18r14 18r29 20r36 31r30 33r13 33r31 36r10 37r10
+. 38r10 40r14 41r12 45r5 46r20 47r5 48r21 49r18 50r5 52r5 61r18 63r22 63r34
+. 27|64e9
+7M10*Bit
+8M10*Symbol_T 11|18r19 20r41 31r35
+9A10*Symbol_String(8M10)<integer> 11|17r46 46r25 48r26
+11I10*Bit_Num<short_short_integer>
+12E10*Wheel_Num 11|18r34 61r23 27|13e50
+13n9*Mu61{12E10} 11|63r27
+13n21*Psi1{12E10} 11|63r39
+19E10*Limitation_T 11|38r15 27|19e46
+21R10*Machine 11|40r19 27|63e15
+22A10*Wheel_Patterns(7M10)<12E10><11I10> 11|36r15
+23A10*Wheel_Positions(11I10)<12E10> 11|37r15
+25a9*Pos{23A10} 11|66r34
+26m9*Chi_Sym{8M10} 11|69r34
+26m18*Psi_Sym{8M10} 11|71r34
+27b13*TM{boolean} 11|73r21
+29A10*Machine_Trace(24R10)<integer> 11|49r23
+30P10*Machine_Trace_Access(29A10) 11|41r17
+34U15*Init_Machine 11|50s10
+48U15*Apply_Crypto 11|52s10
+X 28 sz42-text_io.ads
+6K14*Text_IO 11|13w11 33r18 33r36 45r10 47r10 28|43e17
+8n22*Letter{8E10} 11|33r44
+10a5*Face(character) 11|33r26
+22U15*Read_File 11|47s18
+32U15*Read_Key 11|45s18
+
