@@ -59,3 +59,10 @@ L (Limitation) est définie différement ...
 - Soit = Chi2_old ^ P5_old_old (the 5th caracter of the plain text two positions ago)
 - Soit = Chi2_old ^ Psi1_old ^ P5_old_old ...
 On utilisera Chi2_old dans un premier temps.
+
+Tony Sale (1931-2011)
+Chercheur qui a reconstruit Colossus (14 ans de travail)
+A participé à la fondation du musée à Bletchley
+www.codesandciphers.co.uk
+Site génial avec pleins de ressources
+vidéos, photos, textes, ...
