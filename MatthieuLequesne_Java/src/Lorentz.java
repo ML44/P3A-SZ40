@@ -1,5 +1,4 @@
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -32,6 +31,8 @@ public class Lorentz {
 		psi4 = new Rotor(Integer.parseInt(br.readLine()),"x.x..xx.x.x.x.x.x.xx.x....xx..xx..xx.xxxxx.x..x....x.");
 		psi5 = new Rotor(Integer.parseInt(br.readLine()),".x.x.x.x.xx...x.x..xxx.xxxx.xx.x....x...x..xx.xx..xx..x.x.x");
 		old_chi2 = (Integer.parseInt(br.readLine()) == 1);
+
+		br.close();
 	}
 	
 	Lorentz(int c1, int c2, int c3, int c4, int c5, int m1, int m2, int p1, int p2, int p3, int p4, int p5, boolean oc2)
