@@ -1,14 +1,40 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
 
 public class Lorentz {
 	
 	Rotor chi1, chi2, chi3, chi4, chi5, mu1, mu2, psi1, psi2, psi3, psi4, psi5;
 	boolean M1, M2;
-	boolean old_chi2 = false;
+	boolean old_chi2;
 	boolean L;
 	boolean TM;
 	int step = 0;
 	
-	Lorentz(int c1, int c2, int c3, int c4, int c5, int m1, int m2, int p1, int p2, int p3, int p4, int p5)
+	Lorentz(String s) throws IOException
+	{
+		BufferedReader br = new BufferedReader(new FileReader(s));
+		
+		chi1 = new Rotor(Integer.parseInt(br.readLine()), "...xxxx....xx....x.xx..x..xx.x.xx.x.xxxx.");
+		chi2 = new Rotor(Integer.parseInt(br.readLine()), "xx..xxx.xx...x.x.xx...x....xxx.");
+		chi3 = new Rotor(Integer.parseInt(br.readLine()),"..xxx.xx..x....xxx..xx.xx..xx");
+		chi4 = new Rotor(Integer.parseInt(br.readLine()),"..xx..x.xx..x..xx..x..xxxx");
+		chi5 = new Rotor(Integer.parseInt(br.readLine()),".x...x.xx..x...xxx.xxx.");
+		
+		mu1 = new Rotor(Integer.parseInt(br.readLine()),"xxx.x.xx..xx..xx...xxxx.x.xx.xx...xx....xxxx.xx..xx...xx....x");
+		mu2 = new Rotor(Integer.parseInt(br.readLine()),"x.xxx.x.x.x.x..x.x.xxx.x.x.x.x.x.x.x.");
+		
+		psi1 = new Rotor(Integer.parseInt(br.readLine()),"..x.x.x.x.x..x..x.xx.xx.x.x..xx.xxx..xxx...");
+		psi2 = new Rotor(Integer.parseInt(br.readLine()),"..x.xx.x.x.x.x.x.xx..xx.x..x.xxxx.....xxx..x.xx");
+		psi3 = new Rotor(Integer.parseInt(br.readLine()),"x.x.x.x.x.x.x..x..xx.x.x.xxxx....xxx...xxx.xx..x..x");
+		psi4 = new Rotor(Integer.parseInt(br.readLine()),"x.x..xx.x.x.x.x.x.xx.x....xx..xx..xx.xxxxx.x..x....x.");
+		psi5 = new Rotor(Integer.parseInt(br.readLine()),".x.x.x.x.xx...x.x..xxx.xxxx.xx.x....x...x..xx.xx..xx..x.x.x");
+		old_chi2 = (Integer.parseInt(br.readLine()) == 1);
+	}
+	
+	Lorentz(int c1, int c2, int c3, int c4, int c5, int m1, int m2, int p1, int p2, int p3, int p4, int p5, boolean oc2)
 	{
 		chi1 = new Rotor(c1, "...xxxx....xx....x.xx..x..xx.x.xx.x.xxxx.");
 		chi2 = new Rotor(c2, "xx..xxx.xx...x.x.xx...x....xxx.");
@@ -24,6 +50,8 @@ public class Lorentz {
 		psi3 = new Rotor(p3,"x.x.x.x.x.x.x..x..xx.x.x.xxxx....xxx...xxx.xx..x..x");
 		psi4 = new Rotor(p4,"x.x..xx.x.x.x.x.x.xx.x....xx..xx..xx.xxxxx.x..x....x.");
 		psi5 = new Rotor(p5,".x.x.x.x.xx...x.x..xxx.xxxx.xx.x....x...x..xx.xx..xx..x.x.x");
+		
+		old_chi2 = oc2;
 	}
 	
 	private Baudot chi(){
