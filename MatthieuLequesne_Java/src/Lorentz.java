@@ -1,5 +1,6 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 
@@ -75,7 +76,7 @@ public class Lorentz {
 		return new Baudot(v);
 	}
 	
-	public Baudot encrypt(Baudot b){
+	public Baudot encrypt(Baudot b, FileWriter fw) throws IOException{
 		Baudot chi = this.chi();
 		Baudot psi = this.psi();
 		Baudot chiffre = b.add(chi.add(psi));
@@ -85,7 +86,7 @@ public class Lorentz {
 		old_chi2 = chi2.getValue(); 
 		TM = (M2||(!L)); 
 		step+=1;
-		this.printState(b, chiffre, chi, psi);
+		fw.write(this.printState(b, chiffre, chi, psi));
 
 		// incrementation
 		chi1.increment();
@@ -114,8 +115,8 @@ public class Lorentz {
 		if(b) return 'x'; else return '.';
 	}
 	
-	public void printState(Baudot b_old, Baudot b_new, Baudot c, Baudot p){
-		System.out.println(
+	public String printState(Baudot b_old, Baudot b_new, Baudot c, Baudot p){
+		 return (
 				step + " : \t"+
 				b_old.getChar() + " " + b_old.getStringX() + "\t" +
 				b_new.getChar() + " " + b_new.getStringX() + "\t" +
@@ -135,7 +136,7 @@ public class Lorentz {
 				p.getStringX() + "\t" +
 				this.printBool(M1) + "\t" +
 				this.printBool(M2) + "\t" +
-				this.printBool(TM)
+				this.printBool(TM) + "\n"
 				);
 	}
 }
