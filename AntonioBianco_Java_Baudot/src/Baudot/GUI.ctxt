@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.params=
+comment0.target=GUI()
+comment1.params=ae
+comment1.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment10.params=e
+comment10.target=void\ windowOpened(java.awt.event.WindowEvent)
+comment2.params=e
+comment2.target=void\ focusGained(java.awt.event.FocusEvent)
+comment3.params=e
+comment3.target=void\ focusLost(java.awt.event.FocusEvent)
+comment4.params=e
+comment4.target=void\ windowActivated(java.awt.event.WindowEvent)
+comment5.params=e
+comment5.target=void\ windowClosed(java.awt.event.WindowEvent)
+comment6.params=e
+comment6.target=void\ windowClosing(java.awt.event.WindowEvent)
+comment7.params=e
+comment7.target=void\ windowDeactivated(java.awt.event.WindowEvent)
+comment8.params=e
+comment8.target=void\ windowDeiconified(java.awt.event.WindowEvent)
+comment9.params=e
+comment9.target=void\ windowIconified(java.awt.event.WindowEvent)
+numComments=11

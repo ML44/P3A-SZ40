@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.params=
+comment0.target=CodificaBaudot()
+comment1.params=testo
+comment1.target=java.lang.String\ codifica(java.lang.String)
+comment1.text=\n\ Codifica\ la\ stringa\ in\ baudot\n
+comment2.params=binario
+comment2.target=java.lang.String\ decodifica(java.lang.String)
+comment2.text=\n\ Decodifica\ la\ stringa\ in\ baudot\n
+comment3.params=carattere
+comment3.target=boolean\ \u00E8CarattereAlfabetico(java.lang.String)
+comment3.text=\n\ Ritorna\ true\ se\ il\ carattere\ \u00E8\ alfabetico\n
+comment4.params=carattere
+comment4.target=boolean\ \u00E8CarattereSpeciale(java.lang.String)
+comment4.text=\n\ Ritorna\ true\ se\ il\ carattere\ \u00E8\ speciale\n
+comment5.params=carattere
+comment5.target=java.lang.String\ getBinario(java.lang.String)
+comment5.text=\n\ Ritorna\ la\ stringa\ che\ rappresenta\ il\ valore\ binario\ del\ carattere\ da\ codificare\n
+comment6.params=binario\ alfabetico
+comment6.target=java.lang.String\ getCarattere(java.lang.String,\ boolean)
+comment6.text=\n\ Ritorna\ il\ carattere\ associato\ dalla\ combinazione\ binaria\n
+numComments=7

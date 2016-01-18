@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #define BAUDOT_ERROR 0xFF;
 
@@ -45,24 +46,48 @@ char bs5[59] = {0,1,0,1,0,1,0,1,0,1,1,0,0,0,1,0,1,0,0,1,1,1,0,1,1,1,1,0,1,1,0,1,
 int main(int argc, char *argv[])
 {
     // the following are the start positions for each of the wheels
-    int kpos[5]={0,6,7,3,4};
-    int m1pos=20;
-    int m2pos=10;
-    int spos[5]={8,26,16,21,24};
+    int kpos[5]={35,26,1,0,22};
+    int m1pos=11;
+    int m2pos=9;
+    int spos[5]={3,21,11,16,19};
 
     int TOTAL_MOTOR, BASIC_MOTOR;
     int LIMITATION;
 
-    char message[] = "qzahlen<<n>>";
+    char message[] = "iiiiiiiMYSUPMIAIEEPMGMD";
     char ch,bp,bc; // bp = plaintext baudot code, bc = ciphertext
     char bit;
     
+	printf("CHI \tPSI \tINPUT \tOUTPUT \n");
+	
     int i,j;
     // for each letter in message
     for(i=0; i<strlen(message); i++){
+		if(bk1[kpos[0]]) printf("x"); else printf(".");
+		if(bk2[kpos[1]]) printf("x"); else printf(".");
+		if(bk3[kpos[2]]) printf("x"); else printf(".");
+		if(bk4[kpos[3]]) printf("x"); else printf(".");
+		if(bk5[kpos[4]]) printf("x"); else printf(".");
+		printf("\t");
+		if(bs1[spos[0]]) printf("x"); else printf(".");
+		if(bs2[spos[1]]) printf("x"); else printf(".");
+		if(bs3[spos[2]]) printf("x"); else printf(".");
+		if(bs4[spos[3]]) printf("x"); else printf(".");
+		if(bs5[spos[4]]) printf("x"); else printf(".");
+		printf("\t");
+
         bc = 0;
-        ch = toupper(message[i]);
+		// ch = toupper(message[i]);
+        ch = (message[i]);
         bp = ascii2baudot(ch);
+		
+		if(get_bit(bp,0)) printf("x"); else printf(".");
+		if(get_bit(bp,1)) printf("x"); else printf(".");
+		if(get_bit(bp,2)) printf("x"); else printf(".");
+		if(get_bit(bp,3)) printf("x"); else printf(".");
+		if(get_bit(bp,4)) printf("x"); else printf(".");
+		printf("\t");		
+		
         // encrypt each bit separately
         bit = get_bit(bp,0);
         bit ^= bk1[kpos[0]] ^ bs1[spos[0]];
@@ -82,7 +107,14 @@ int main(int argc, char *argv[])
         
         bit = get_bit(bp,4);
         bit ^= bk5[kpos[4]] ^ bs5[spos[4]];
-        bc = set_bit(bc,4,bit);    
+        bc = set_bit(bc,4,bit);  
+		
+		if(get_bit(bc,0)) printf("x"); else printf(".");
+		if(get_bit(bc,1)) printf("x"); else printf(".");
+		if(get_bit(bc,2)) printf("x"); else printf(".");
+		if(get_bit(bc,3)) printf("x"); else printf(".");
+		if(get_bit(bc,4)) printf("x"); else printf(".");
+		printf("\t");	  
 
         ch = baudot2ascii(bc,1);
         printf("%c",ch);                          
@@ -97,6 +129,8 @@ int main(int argc, char *argv[])
         if(TOTAL_MOTOR != 0) advance_spos(spos);
         if(bm1[m1pos] != 0) advance_m2pos(&m2pos);
         advance_m1pos(&m1pos);
+		
+		printf("\n");
     }
     printf("\n");
     system("PAUSE");	

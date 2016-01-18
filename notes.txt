@@ -19,6 +19,8 @@ General report on Tunny :
 http://www.alanturing.net/turing_archive/archive/index/tunnyreportindex.html
 http://www.ellsbury.com/tunny/tunny-007.htm
 
+Implementation en C (commentaire de practicalcrypto)
+https://github.com/jameslyons/python_cryptanalysis/blob/master/lorenz.c
 
 Rotors :
 bk1 ...xxxx....xx....x.xx..x..xx.x.xx.x.xxxx.
