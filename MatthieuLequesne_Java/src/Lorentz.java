@@ -31,12 +31,12 @@ public class Lorentz {
 		psi3 = new Rotor(Integer.parseInt(br.readLine()),"x.x.x.x.x.x.x..x..xx.x.x.xxxx....xxx...xxx.xx..x..x");
 		psi4 = new Rotor(Integer.parseInt(br.readLine()),"x.x..xx.x.x.x.x.x.xx.x....xx..xx..xx.xxxxx.x..x....x.");
 		psi5 = new Rotor(Integer.parseInt(br.readLine()),".x.x.x.x.xx...x.x..xxx.xxxx.xx.x....x...x..xx.xx..xx..x.x.x");
-		old_chi2 = (Integer.parseInt(br.readLine()) == 1);
+		//old_chi2 = (Integer.parseInt(br.readLine()) == 1); (à ajouter en variable le cas échéant)
 
 		br.close();
 	}
 	
-	Lorentz(int c1, int c2, int c3, int c4, int c5, int m1, int m2, int p1, int p2, int p3, int p4, int p5, boolean oc2)
+	Lorentz(int c1, int c2, int c3, int c4, int c5, int m1, int m2, int p1, int p2, int p3, int p4, int p5)
 	{
 		chi1 = new Rotor(c1, "...xxxx....xx....x.xx..x..xx.x.xx.x.xxxx.");
 		chi2 = new Rotor(c2, "xx..xxx.xx...x.x.xx...x....xxx.");
@@ -53,7 +53,7 @@ public class Lorentz {
 		psi4 = new Rotor(p4,"x.x..xx.x.x.x.x.x.xx.x....xx..xx..xx.xxxxx.x..x....x.");
 		psi5 = new Rotor(p5,".x.x.x.x.xx...x.x..xxx.xxxx.xx.x....x...x..xx.xx..xx..x.x.x");
 		
-		old_chi2 = oc2;
+		//old_chi2 = oc2;
 	}
 	
 	private Baudot chi(){
@@ -82,7 +82,7 @@ public class Lorentz {
 		Baudot chiffre = b.add(chi.add(psi));
 		M1 = mu1.getValue();
 		M2 = mu2.getValue();
-		L = old_chi2 ; // Definition may change
+		L = true ; // Definition may change : if LimChi2 : L = old_chi2
 		old_chi2 = chi2.getValue(); 
 		TM = (M2||(!L)); 
 		step+=1;

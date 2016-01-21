@@ -13,31 +13,30 @@ public class Rotor {
 
 	Rotor(int p, String s)
 	{
-		boolean[] v = convert(s);
-		length = v.length;
-		value = v;
-		position = (p-1) % length;
-	}
-
-	boolean[] convert(String s)
-	{
-		boolean[] b = new boolean[s.length()];
+		
+		boolean[] v = new boolean[s.length()];
 		for(int k=0;k<s.length();k++)
 		{
-			b[k]=(s.charAt(k)=='x');
+			v[k]=(s.charAt(k)=='x');
 		}
-		return b;
+				length = v.length;
+		value = v;
+		position = (p-1) % length;
 	}
 	
 	public boolean getValue(){
 		return value[position];
 	}
+
+	public boolean getPreviousValue(){
+		return value[(position-1)%length];
+	}
 	
 	public char printValue(){
 		if(value[position]) 
-			return '1'; 
+			return 'x'; 
 		else 
-			return '0';
+			return '.';
 	}
 	
 	public int getPosition(){
