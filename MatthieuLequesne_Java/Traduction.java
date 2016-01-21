@@ -4,41 +4,44 @@ import java.io.*;
 public class Traduction {
 	static String baudot = "/9HTOMN3RCVGLPI4AUQW+-KJDFXBZYSE";
 	static String alpha =  "i HTOMNrRCVGLPInAUQWiiKJDFXBZYSE";
-	static String num =    "i £59.,r4;=@)08n-712ii(ii%/?+6'3";
-	
-	static void normalisation(String s) throws IOException{
-		
+	static String num =    "i £59.,r4:=@)08n-712ii(ii%/?+6'3";
+
+	static void normalisation(String file) throws IOException{
+
 	// 1e étape : lecture ligne par ligne pour enlever les accents
-		
-		BufferedReader in = new BufferedReader(new FileReader("data/"+s+".txt"));
-		PrintWriter out =  new PrintWriter(new BufferedWriter (new FileWriter("data/"+s+".norm")));
-		
+
+		BufferedReader in = new BufferedReader(new FileReader("data/"+file+".txt"));
+		PrintWriter out =  new PrintWriter(new BufferedWriter (new FileWriter("data/"+file+".norm")));
+
 		String line;
-		
-		while(in.ready())	
+
+		while(in.ready())
 		{
 			line = in.readLine();
 		    line = Normalizer.normalize(line, Normalizer.Form.NFD);
 		    line = line.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
-		    out.write(line.toUpperCase()+'n');
+		    line = line.replaceAll(" !", ".");
+		    line = line.replaceAll(" ;", ",");
+		    out.write(line.toUpperCase());
+		    if(in.ready()){out.write("\n");}
 		}
-		
 		in.close();
 		out.close();
 	}
-		
+
 	// 2e étape : lecture caractère par caractère pour mettre en majuscule et enlever la ponctuation sauf les espaces
 
-	static void traduction(String s) throws IOException{
+	static void traduction(String file) throws IOException{
 		int k=0;
 		char c;
-		FileInputStream in = new FileInputStream("data/"+s+".norm");
-		FileOutputStream out = new FileOutputStream("data/"+s+".trad");
+		FileInputStream in = new FileInputStream("data/"+file+".norm");
+		FileOutputStream out = new FileOutputStream("data/"+file+".trad");
 		boolean shift = false;
 
 		while(k!=-1){
 			k = in.read();
-			c = (char) k;
+			if(k==10) {c = 'n';}
+			else{c = (char) k;}
 			if(alpha.contains(c+""))
 			{
 				if(shift)
@@ -63,16 +66,16 @@ public class Traduction {
 
 		in.close();
 		out.close();
-		
+
 	// supprimer le fichier .norm
-	//	new File ("data/"+s+".norm").delete();
+	//	new File ("data/"+file+".norm").delete();
 	}
-	
-	static void retrotraduction(String s) throws IOException{
+
+	static void retrotraduction(String file) throws IOException{
 		int k=0;
 		char c;
-		FileInputStream in = new FileInputStream("data/"+s+".out");
-		FileOutputStream out = new FileOutputStream("data/"+s+"_decrypte.txt");
+		FileInputStream in = new FileInputStream("data/"+file+".tmp");
+		FileOutputStream out = new FileOutputStream("data/"+file+"_dechiffre.txt");
 		boolean shift = false;
 
 		while(k!=-1){
@@ -87,14 +90,14 @@ public class Traduction {
 				else if	(c == '9')	{out.write(' ');}
 				else if	(shift)		{out.write(num.charAt(baudot.indexOf(c+"")));}
 				else 				{out.write(alpha.charAt(baudot.indexOf(c+"")));}
-			}	
+			}
 		}
 
 		in.close();
 		out.close();
-		
-	// supprimer le fichier .norm
-	//	new File ("data/"+s+".out").delete();
+
+	// supprimer le fichier .tmp
+	//	new File ("data/"+file+".tmp").delete();
 	}
 
 }
