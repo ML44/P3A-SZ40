@@ -9,69 +9,34 @@ public class test {
 
 	public static void main(String[] args) throws IOException {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
-		// Lecture du fichier et de la clé
-		String todo = (String) args[0];
-		String s = args[1];
-		String key = args[2];
+=======
+				
 		
-		if(todo.contains("encrypt"))
-		{
-			Traduction.normalisation(s);
-			Traduction.traduction(s);
-			
-			Lorentz L = new Lorentz("data/"+key+".cle");
+>>>>>>> parent of d96eca4... Baudot 2 claviers et encrypt/decrypt
+		// Lecture du fichier et de la clé
+		String s = args[0];
+		
+		Normalisation.normalise(s);
+		Lorentz L = new Lorentz("data/"+s+".cle");
 
-			FileInputStream in = new FileInputStream("data/"+s+".trad");
-			FileOutputStream out = new FileOutputStream("data/"+s+"_out.txt");
+		FileInputStream in = new FileInputStream("data/"+s+".norm");
+		FileOutputStream out = new FileOutputStream("data/"+s+"_out.txt");
 
-			File p = new File ("data/"+s+".process");
-			FileWriter fw = new FileWriter (p);		
-			fw.write("Step \tInput \tOutput\tK1 \tK2 \tK3 \tK4 \tK5 \tM1 \tM2 \tS1 \tS2 \tS3 \tS4 \tS5 \tChi \tPsi \tM1 \tM2 \tTM \n");
-			Baudot b;
-			int k=0;
-			char c;
-			while(k!=-1){
-				k = in.read();
-				c = (char) k;
-				b = new Baudot(c);
-				out.write(L.encrypt(b, fw).getChar());
-			}
-			
-			in.close();
-			out.close();
-		    fw.close();
+		File p = new File ("data/"+s+".process");
+		FileWriter fw = new FileWriter (p);		
+		fw.write("Step \tInput \tOutput\tK1 \tK2 \tK3 \tK4 \tK5 \tM1 \tM2 \tS1 \tS2 \tS3 \tS4 \tS5 \tChi \tPsi \tM1 \tM2 \tTM \n");
+		Baudot b;
+		int k=0;
+		char c;
+		while(k!=-1){
+			k = in.read();
+			c = (char) k;
+			b = new Baudot(c);
+			out.write(L.encrypt(b, fw).getChar());
 		}
-		else if (todo.contains("decrypt"))
-		{
-			Lorentz L = new Lorentz("data/"+key+".cle");
-
-			FileInputStream in = new FileInputStream("data/"+s+".txt");
-			FileOutputStream out = new FileOutputStream("data/"+s+".out");
-
-			File p = new File ("data/"+s+".process");
-			FileWriter fw = new FileWriter (p);		
-			fw.write("Step \tInput \tOutput\tK1 \tK2 \tK3 \tK4 \tK5 \tM1 \tM2 \tS1 \tS2 \tS3 \tS4 \tS5 \tChi \tPsi \tM1 \tM2 \tTM \n");
-			Baudot b;
-			int k=0;
-			char c;
-			while(k!=-1){
-				k = in.read();
-				c = (char) k;
-				b = new Baudot(c);
-				out.write(L.encrypt(b, fw).getChar());
-			}
-			
-			in.close();
-			out.close();
-		    fw.close();
-
-		    Traduction.retrotraduction(s);
-		}
-		else
-		{
-			System.out.println("ERREUR D'ENTREE");
-		}
+<<<<<<< HEAD
 =======
 		
 		int n = 2;
@@ -98,6 +63,12 @@ public class test {
 	    fw.close();
 	    fwp.close();
 >>>>>>> parent of 730e80f... Motifs entrees sorties
+=======
+		
+		in.close();
+		out.close();
+	    fw.close();
+>>>>>>> parent of d96eca4... Baudot 2 claviers et encrypt/decrypt
 
 	}
 

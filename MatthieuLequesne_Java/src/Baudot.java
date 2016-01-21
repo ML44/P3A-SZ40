@@ -1,7 +1,7 @@
 public class Baudot {
 
 	private boolean[] valeur = new boolean[5];
-	static String alphabet = "/E4A9SIU3DRJNFCKTZLWHYPQOBG+MXV-";
+	static String alphabet = "/E4A.SIU3DRJNFCKTZLWHYPQOBG+MXV-";
 
 	
 	public int getInt()
